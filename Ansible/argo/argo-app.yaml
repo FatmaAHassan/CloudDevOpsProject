@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: flask-app-gitops
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: 'https://github.com/FatmaAHassan/CloudDevOpsProject.git'
+    targetRevision: HEAD
+    path: 'Ansible/k8s'
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: ivolve
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
