@@ -1,0 +1,17 @@
+---
+- name: Pull Jenkins Docker Image
+  community.docker.docker_image:
+    name: jenkins/jenkins:lts
+    source: pull
+
+- name: Create Jenkins Container
+  community.docker.docker_container:
+    name: jenkins
+    image: jenkins/jenkins:lts
+    state: started
+    restart_policy: always
+    published_ports:
+      - "8080:8080"
+      - "50000:50000"
+    volumes:
+      - jenkins_home:/var/jenkins_home

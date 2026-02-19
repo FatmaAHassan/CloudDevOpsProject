@@ -1,0 +1,25 @@
+---
+- name: Create Swap file to help RAM
+  shell: |
+    sudo fallocate -l 2G /swapfile
+    sudo chmod 600 /swapfile
+    sudo mkswap /swapfile
+    sudo swapon /swapfile
+  ignore_errors: yes
+
+- name: Download Minikube
+  get_url:
+    url: https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+    dest: /usr/local/bin/minikube
+    mode: '0755'
+
+- name: Download kubectl
+  get_url:
+    url: "https://dl.k8s.io/release/v1.28.0/bin/linux/amd64/kubectl"
+    dest: /usr/local/bin/kubectl
+    mode: '0755'
+
+- name: Start Minikube
+  become_user: ubuntu
+  shell: |
+    sg docker -c "minikube start --driver=docker --memory=2048mb"
