@@ -57,10 +57,9 @@ The CI pipeline is the heart of the project. We used a **Jenkins Shared Library*
 
 > **## 📸 Screenshots:**
 > ![Jenkins Pipeline View](screenshots/jenkinslogin.jpg)
- > ![Jenkins Pipeline View](screenshots/cred-jenkins.jpg)
+> ![Jenkins Pipeline View](screenshots/cred-jenkins.jpg)
 > ![Jenkins Pipeline View](screenshots/jenkins-pipeline.jpg)
 > ![Jenkins Pipeline View](screenshots/pipeline.jpg)
-> ![Jenkins Pipeline View](screenshots/)
 
 
 > ![Docker Hub Registry](screenshots/dockerhub.jpg)
