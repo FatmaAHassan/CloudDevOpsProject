@@ -1,4 +1,4 @@
-# 🚀 Multi-Cloud GitOps Pipeline: From Infrastructure to Deployment
+# 🚀 Cloud GitOps Pipeline: From Infrastructure to Deployment
 
 **A comprehensive DevSecOps project automating infrastructure, configuration, and continuous delivery.**
 ![Project-image](screenshots/project-grap.png)
